@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
-import { AppService, ICourseAttributes } from './app.service';
+import { AppService } from './app.service';
 import CreateCourseDto from './course/create-course-dto';
+import UpdateCourseDto from './course/update-course-dto';
 
 @Controller()
 export class AppController {
@@ -22,7 +23,7 @@ export class AppController {
   }
 
   @Put(':id')
-  updateCourse(@Param('id') id: number, @Body() course: ICourseAttributes) {
+  updateCourse(@Param('id') id: number, @Body() course: UpdateCourseDto) {
     return this.appService.updateCourse(id, course);
   }
 
