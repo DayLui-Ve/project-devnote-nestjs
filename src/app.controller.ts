@@ -13,7 +13,7 @@ export class AppController {
   }
 
   @Get(':id')
-  findCourse(@Param('id') id: number) {
+  findCourse(@Param('id') id: string) {
     return this.appService.findCourse(id);
   }
 
@@ -23,7 +23,7 @@ export class AppController {
   }
 
   @Put(':id')
-  updateCourse(@Param('id') id: number, @Body() course: UpdateCourseDto) {
+  updateCourse(@Param('id') id: string, @Body() course: UpdateCourseDto) {
     return this.appService.updateCourse(id, course);
   }
 
